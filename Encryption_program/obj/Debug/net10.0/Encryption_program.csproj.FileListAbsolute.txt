@@ -1,0 +1,15 @@
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\bin\Debug\net10.0\Encryption_program.exe
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\bin\Debug\net10.0\Encryption_program.deps.json
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\bin\Debug\net10.0\Encryption_program.runtimeconfig.json
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\bin\Debug\net10.0\Encryption_program.dll
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\bin\Debug\net10.0\Encryption_program.pdb
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\obj\Debug\net10.0\Encryption_program.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\obj\Debug\net10.0\Encryption_program.AssemblyInfoInputs.cache
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\obj\Debug\net10.0\Encryption_program.AssemblyInfo.cs
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\obj\Debug\net10.0\Encryption_program.csproj.CoreCompileInputs.cache
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\obj\Debug\net10.0\Encryption_program.sourcelink.json
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\obj\Debug\net10.0\Encryption_program.dll
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\obj\Debug\net10.0\refint\Encryption_program.dll
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\obj\Debug\net10.0\Encryption_program.pdb
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\obj\Debug\net10.0\Encryption_program.genruntimeconfig.cache
+c:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program\obj\Debug\net10.0\ref\Encryption_program.dll
