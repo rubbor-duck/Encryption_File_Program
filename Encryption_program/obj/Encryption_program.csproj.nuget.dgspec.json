@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\nelso\\Documents\\College\\Fall 2026\\CSE 310\\Encryption_File_Program\\Encryption_program\\Encryption_program.csproj": {}
+    "C:\\Users\\nelso\\Documents\\College\\Fall 2026\\CSE 310\\Encryption_File_Program\\Encryption_program\\Encryption_program.csproj": {}
   },
   "projects": {
-    "c:\\Users\\nelso\\Documents\\College\\Fall 2026\\CSE 310\\Encryption_File_Program\\Encryption_program\\Encryption_program.csproj": {
+    "C:\\Users\\nelso\\Documents\\College\\Fall 2026\\CSE 310\\Encryption_File_Program\\Encryption_program\\Encryption_program.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\nelso\\Documents\\College\\Fall 2026\\CSE 310\\Encryption_File_Program\\Encryption_program\\Encryption_program.csproj",
+        "projectUniqueName": "C:\\Users\\nelso\\Documents\\College\\Fall 2026\\CSE 310\\Encryption_File_Program\\Encryption_program\\Encryption_program.csproj",
         "projectName": "Encryption_program",
-        "projectPath": "c:\\Users\\nelso\\Documents\\College\\Fall 2026\\CSE 310\\Encryption_File_Program\\Encryption_program\\Encryption_program.csproj",
+        "projectPath": "C:\\Users\\nelso\\Documents\\College\\Fall 2026\\CSE 310\\Encryption_File_Program\\Encryption_program\\Encryption_program.csproj",
         "packagesPath": "C:\\Users\\nelso\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\nelso\\Documents\\College\\Fall 2026\\CSE 310\\Encryption_File_Program\\Encryption_program\\obj\\",
+        "outputPath": "C:\\Users\\nelso\\Documents\\College\\Fall 2026\\CSE 310\\Encryption_File_Program\\Encryption_program\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nelso\\AppData\\Roaming\\NuGet\\NuGet.Config"
