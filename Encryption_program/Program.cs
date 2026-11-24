@@ -3,6 +3,8 @@ using System.Security.Cryptography;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Reflection;
+using System;
+using System.IO;
 
 //TODO: Make the key and IV randomized
 
@@ -12,6 +14,8 @@ string aesIV = "6543210987654321";
 
 string originalText = "";
 string encryptedAES = "";
+
+const string projectFolder = @"C:\Users\nelso\Documents\College\Fall 2026\CSE 310\Encryption_File_Program\Encryption_program";
 
 while (option != 0)
 {
@@ -36,20 +40,54 @@ while (option != 0)
     switch (option)
     {
     case 1:
-        Console.Write("Text to encrypt: ");
+        Console.WriteLine("What File do you want to read from?");
+        Console.Write("Selection: ");
 
-        originalText = Console.ReadLine();
+        string originalfile = Console.ReadLine();
 
-        encryptedAES = Encrypt(originalText, aesKey, aesIV);
-        Console.WriteLine($"\n AES Encrypted:\n {encryptedAES}");
+            if (File.Exists(Path.Combine(projectFolder, originalfile)))
+            {
+                originalText = ReadFile(Path.Combine(projectFolder, originalfile));
+
+                encryptedAES = Encrypt(originalText, aesKey, aesIV);
+                Console.WriteLine($"\n AES Encrypted:\n {encryptedAES}");
+
+                WriteToFile(Path.Combine(projectFolder, "test_encrypted.txt"), encryptedAES);
+            }
+
+            else
+            {
+                Console.WriteLine("Error: File Does Not Exist");
+            }
+        
         break;
+
     case 2:
-        string decryptedAES = Decrypt(encryptedAES, aesKey, aesIV);
-        Console.WriteLine($"\n AES Decrypted\n {decryptedAES}");
+        Console.WriteLine("What File do you want to read from?");
+        Console.Write("Selection: ");
+
+        string encryptedfile = Console.ReadLine();
+
+            if (File.Exists(Path.Combine(projectFolder, encryptedfile)))
+            {
+                encryptedAES = ReadFile(Path.Combine(projectFolder, encryptedfile));
+
+                string decryptedAES = Decrypt(encryptedAES, aesKey, aesIV);
+                Console.WriteLine($"\n AES Decrypted\n {decryptedAES}");
+
+                WriteToFile(Path.Combine(projectFolder,"test_decrypted.txt"), decryptedAES);
+            }
+
+            else
+            {
+                Console.WriteLine("Error: File Does Not Exist");
+            }
         break;
+
     case 0:
         Console.WriteLine("Have a wonderful day!");
         break;
+
     default:
         Console.WriteLine("Please Select A Valid Option");
         break;
@@ -84,4 +122,20 @@ string Decrypt(string cipherText, string key, string iv)
     using var sr = new StreamReader(cs);
 
     return sr.ReadToEnd();
+}
+
+string ReadFile(string fileLocation)
+{
+    Console.WriteLine($"Reading from {fileLocation}");
+
+    string contents = File.ReadAllText(fileLocation);
+
+    return contents;
+}
+
+void WriteToFile(string fileLocation, string contents)
+{
+    Console.WriteLine($"Writing to {fileLocation}");
+
+    File.WriteAllText(fileLocation, contents);
 }
