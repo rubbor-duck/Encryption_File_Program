@@ -6,7 +6,9 @@ using System.Reflection;
 using System;
 using System.IO;
 
-//TODO: Make the key and IV randomized
+/*  TODO: Make the key and IV randomized
+    Add a way to retry inputing a destination file location after encryption/decrytpion
+*/
 
 int option = -1;
 string aesKey = "1234567890123456";
@@ -40,7 +42,7 @@ while (option != 0)
     switch (option)
     {
     case 1:
-        Console.WriteLine("What File do you want to read from?");
+        Console.WriteLine("\n What File do you want to read from?");
         Console.Write("Selection: ");
 
         string originalfile = Console.ReadLine();
@@ -52,7 +54,21 @@ while (option != 0)
                 encryptedAES = Encrypt(originalText, aesKey, aesIV);
                 Console.WriteLine($"\n AES Encrypted:\n {encryptedAES}");
 
-                WriteToFile(Path.Combine(projectFolder, "test_encrypted.txt"), encryptedAES);
+
+                Console.WriteLine("\n What File do you want to write to?");
+                Console.Write("Selection: ");
+
+                string encryptedFileLocation = Console.ReadLine();
+
+                if (File.Exists(Path.Combine(projectFolder, encryptedFileLocation)))
+                {
+                    WriteToFile(Path.Combine(projectFolder, "test_encrypted.txt"), encryptedAES);
+                }
+
+                else
+                {
+                    Console.WriteLine("Error: Encrypted file Does Not Exist");
+                }
             }
 
             else
@@ -75,12 +91,25 @@ while (option != 0)
                 string decryptedAES = Decrypt(encryptedAES, aesKey, aesIV);
                 Console.WriteLine($"\n AES Decrypted\n {decryptedAES}");
 
-                WriteToFile(Path.Combine(projectFolder,"test_decrypted.txt"), decryptedAES);
+                Console.WriteLine("\n What File do you want to write to?");
+                Console.Write("Selection: ");
+
+                string decryptedFileLocation = Console.ReadLine();
+
+                if (File.Exists(Path.Combine(projectFolder, decryptedFileLocation)))
+                {
+                    WriteToFile(Path.Combine(projectFolder,"test_decrypted.txt"), decryptedAES);
+                }
+
+                else
+                {
+                    Console.WriteLine("Error: Decrypted file does not exist");
+                }
             }
 
             else
             {
-                Console.WriteLine("Error: File Does Not Exist");
+                Console.WriteLine("Error: Encrypted file Does Not Exist");
             }
         break;
 
