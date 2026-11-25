@@ -6,8 +6,7 @@ using System.Reflection;
 using System;
 using System.IO;
 
-/*  TODO: Make the key and IV randomized
-    Add a way to retry inputing a destination file location after encryption/decrytpion
+/*  TODO: Add a way to retry inputing a destination file location after encryption/decrytpion
 */
 
 int option = -1;
@@ -24,6 +23,7 @@ while (option != 0)
     Console.WriteLine("|| Encrypt Your Files ||");
     Console.WriteLine("1. Encrypt File");
     Console.WriteLine("2. Decrypt File");
+    Console.WriteLine("3. Compare Files");
     Console.WriteLine("0. Exit Program");
     Console.WriteLine();
     Console.Write("Selection: ");
@@ -42,7 +42,7 @@ while (option != 0)
     switch (option)
     {
     case 1:
-        Console.WriteLine("\n What File do you want to read from?");
+        Console.WriteLine("\nWhat File do you want to read from?");
         Console.Write("Selection: ");
 
         string originalfile = Console.ReadLine();
@@ -55,7 +55,7 @@ while (option != 0)
                 Console.WriteLine($"\n AES Encrypted:\n {encryptedAES}");
 
 
-                Console.WriteLine("\n What File do you want to write to?");
+                Console.WriteLine("\nWhat File do you want to write to?");
                 Console.Write("Selection: ");
 
                 string encryptedFileLocation = Console.ReadLine();
@@ -91,7 +91,7 @@ while (option != 0)
                 string decryptedAES = Decrypt(encryptedAES, aesKey, aesIV);
                 Console.WriteLine($"\n AES Decrypted\n {decryptedAES}");
 
-                Console.WriteLine("\n What File do you want to write to?");
+                Console.WriteLine("\nWhat File do you want to write to?");
                 Console.Write("Selection: ");
 
                 string decryptedFileLocation = Console.ReadLine();
@@ -110,6 +110,51 @@ while (option != 0)
             else
             {
                 Console.WriteLine("Error: Encrypted file Does Not Exist");
+            }
+        break;
+
+    case 3:
+        string filePath1;
+        string filePath2;
+        string file1 = "";
+        string file2 = "";
+
+        Console.WriteLine("What two files do you want to compare?\n");
+
+        Console.Write("File 1: ");
+        filePath1 = Console.ReadLine();
+
+        if (File.Exists(Path.Combine(projectFolder, filePath1)))
+            {
+                file1 = ReadFile(Path.Combine(projectFolder, filePath1));
+            }
+
+        else
+            {
+                Console.WriteLine("Error: File does not exist");
+            }
+    
+        Console.Write("\nFile 2: ");
+        filePath2 = Console.ReadLine();
+
+        if (File.Exists(Path.Combine(projectFolder, filePath2)))
+            {
+                file2 = ReadFile(Path.Combine(projectFolder, filePath2));
+            }
+
+        else
+            {
+                Console.WriteLine("Error: File does not exist");
+            }
+
+        if (file1 == file2)
+            {
+                Console.WriteLine("\nThe files are the same");
+            }
+
+        else
+            {
+                Console.WriteLine("\nThe files contain different data");
             }
         break;
 
